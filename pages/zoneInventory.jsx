@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import DynamicForm from '../src/components/DynamicForm3'
 import { Button } from 'react-bootstrap';
+import Back from '../src/components/back'
 
 const StatusBadge = ({ value }) => {
   console.log('type' , value)
@@ -24,7 +25,7 @@ const Dated = ({ value }) =>{
 }
 const Main = () => {
    const [name, setName] = useState('');  
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
         e.preventDefault();
         const y=name
         console.log(y);    
@@ -59,20 +60,22 @@ const Main = () => {
     },]
   return(
 
-    <div style={{marginTop:'5%'}}>
-        <form style={{marginLeft:'80%' }} onSubmit = {handleSubmit} >
+    <div >
+      <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Zone Inventory</h1>
+              <div style={{marginLeft:'80%'}}>
+              <form style={{  marginTop:'3%' ,marginBottom:'2%'}} onSubmit = {handleSubmit}  style={{}}>
   <input type='text' onChange = {(e) => setName(e.target.value)} value = {name} ></input> 
       <Button variant="primary" style={{marginLeft:'4%'}} type='submit'>Search</Button>
 </form>
-      
-      <h1 style={{marginTop:'5%'}}>Zone Inventory</h1>
+              </div>
        {loading && <Spinner size="large" />}       
       {!loading && (
-        <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={data} keyField="id" style={{margin:'5%'}}>
-            <Column header="Designation" field="zoneDesignation" />
+        <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={data} keyField="id" defaultWidth={200} className='tableRainbow'>
+            <Column header="ID" field="zoneId" style={{fontSize:'20px'}} />  
+            <Column header="Creator" field="zoneCreator" />
+            <Column header="Designation" field="zoneDesignation" style={{fontSize:'20px'}} />
             <Column header="Description" field="zoneDescription" />
             <Column header="Creation Date" field="zoneDateCreation" component={Dated} />
-            <Column header="Creator" field="zoneCreator" />
             <Column header="Status" field="zoneActive"  component={StatusBadge} />
 
         </TableWithBrowserPagination>
@@ -83,6 +86,7 @@ export default function index ()
 {
   return(
       <div>
+        <Back />
         <Main />
       </div>
 

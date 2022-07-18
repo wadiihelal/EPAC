@@ -23,15 +23,22 @@ function Navbar() {
 										Home
 									</Link>
 									<Link
-										href="/activeHosts"
+										href="/zoneInventory"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Zone Inventory
-									</Link>										<Link
+									</Link>										
+									<Link
 										href="/menu"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Pallet Inventory
+									</Link>										
+									<Link
+										href="/test"
+										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+									>
+										Statistics
 									</Link>								
 
 
