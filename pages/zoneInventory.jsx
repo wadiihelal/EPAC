@@ -17,7 +17,7 @@ const StatusBadge = ({ value }) => {
 }
 const Dated = ({ value }) =>{
       const x = new Date(value);
-      const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
+      const y = " " + x.getHours().toString() + ":" +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
       return (
       <div>
         {y}

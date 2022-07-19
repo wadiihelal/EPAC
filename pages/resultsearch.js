@@ -1,51 +1,43 @@
-import React from "react";
-import Button from 'react-bootstrap/Button';
-import { useRouter } from 'next/router'
-import Back from "../src/components/back"
-import { data } from "../src/components/searchBar";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AlertReset from "../src/components/alertReset";
-function Resultsearch () 
+import React ,{useState , useEffect} from "react";
+  import { useRouter } from 'next/router'
+import axios from "axios";
+import { TableWithBrowserPagination, Column, Badge ,Spinner } from 'react-rainbow-components';
 
-{
+
+const resultSearch = (props) => {
+      const [data, setData] = useState([])
+      const router = useRouter();
+      useEffect(() => {
+          const fetchData = async () =>{
+            try {
+              const {data: response} =  await axios.get(`http://localhost:9090/palletLoadTag/+${router.query.name}`)
+              setData(response);
+              console.log(data)
+            } catch (error) {
+              console.error(error.message);
+              setData(null)
+            }
+          }
+        
+          fetchData();
+        }, []);
         return (
-        <div >
-                    <Back/>
+        <div>
+        {data &&
+         <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={data} keyField="id" defaultWidth={200} className='tableRainbow'>
+            <Column header="ID" field="palletID"/>
+            <Column header="Status" field="palletState" />
+            <Column header="Creation Date" field="palletDateCreation" />
+            <Column header="Creator" field="palletCreator" />
+            <Column header="zoneID" field="zoneId" />
 
-          {data.projects.map((project, key) => {
-            return <p key={key} >
-                <table className="arrayResult">   
-                    <tr >
-                    <th className="coll">LoadTagID</th>
-                    <th className="coll">PalletID</th>
-                    <th className="coll">CreationDate</th>
-                    <th className="coll">ReleaseDate</th>
-  </tr>
-                  
-                    <tr>
-                        <td className="coll">
-                    {project.LoadTagID}
-                    </td>
-                    <td className="coll">
-                    {project.PalletID}
-                    </td>
-                    <td className="coll">
-                    {project.CreationDate}
-                    </td>
-                    <td className="coll ">
-                    {project.ReleaseDate}
-                    </td>
-                    </tr>  
-                </table>
-                <br></br>
-                <div className="centreReset">
-                <AlertReset  /> </div>
-            </p>;
-          })}
-
+        </TableWithBrowserPagination>}
+        {data==null && <h1>failed</h1>}
          
-        </div>
-      );
-}
+       
 
-export default Resultsearch;
+</div>
+    )
+}
+  
+export default resultSearch;
