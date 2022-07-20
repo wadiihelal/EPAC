@@ -1,7 +1,8 @@
 import React from "react";
-import { StyledButton } from "./styles";
+import { StyledButtonAddLoad } from "./styles";
+
 const index = ({ children }) => {
-  return <StyledButton type="submit">{children}</StyledButton>;
+  return <StyledButtonAddLoad type="submit">{children}</StyledButtonAddLoad>;
 };
 
 export default index;

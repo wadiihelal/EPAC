@@ -42,7 +42,7 @@ export const Msg = styled.span``;
 // `;
 export const StyledOption = styled.option`
   width: auto;
-  /* display: block;
+  display: block;
   width: 100%;
   height: 3rem;
   padding: 0.75rem 0.9375rem;
@@ -66,5 +66,5 @@ export const StyledOption = styled.option`
     border: 2px solid black;
   }
   background-color: green;
-  width: 100%; */
+  width: 100%;
 `;

@@ -22,7 +22,8 @@
     border-radius: 20px;
     padding: 4%;
   }
-  input[type=text], select {    margin-left: 1.5%;
+  input[type=text], select {    
+    /* margin-left: 1.5%; */
     border: 2px solid #ccc;
     border-radius: 100px;
     box-sizing: border-box;
@@ -268,7 +269,7 @@ input[type="submit"] {
 
 
 input[type="submit"]:hover {
-  background: #bf1650;
+  background: #blue;
 }
 
 
@@ -282,7 +283,8 @@ input:disabled {
 
 
 .App {
-  max-width: 600px;
+  margin-top: 9% !important;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -322,5 +324,5 @@ font-family: 'Roboto';
   margin-bottom: 1%; margin-top: 1%;
 }
 .dMqrBK{
-  height: 750px !important;
+    overflow-y: hidden !important ;
 }

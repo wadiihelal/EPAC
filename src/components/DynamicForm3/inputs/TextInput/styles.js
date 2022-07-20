@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 20px;
+  margin-bottom: auto;
 `;
 export const LabelWrapper = styled.div`
   display: flex;
