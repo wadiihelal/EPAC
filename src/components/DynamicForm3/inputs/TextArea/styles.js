@@ -40,5 +40,5 @@ export const StyledLabel = styled.label`
   margin-bottom: 5px;
 `;
 export const Msg = styled.span`
-  color: red;
+  color: green;
 `;

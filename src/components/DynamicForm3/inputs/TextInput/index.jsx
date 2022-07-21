@@ -20,7 +20,7 @@ const Index = ({ input }) => {
               <Container>
                 <LabelWrapper>
                   <StyledLabel htmlFor="name">{label}</StyledLabel>
-                  <div style={{ color: "red" }}>*</div>
+                  {/* <div style={{ color: "red" }}>*</div> */}
                 </LabelWrapper>
 
                 {/* <StyledInput

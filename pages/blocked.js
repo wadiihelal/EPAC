@@ -25,11 +25,7 @@ const Dated = ({ value }) =>{
 }
 const Main = () => {
    const [name, setName] = useState('');  
-  const handleSubmit = (e) => {
-        e.preventDefault();
-        const y=name
-        // console.log(y);    
-    }
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
 
@@ -48,24 +44,33 @@ const Main = () => {
     fetchData();
  
   }, []);
-    const options= [];
+    let options= [];
   data.map((e,index) => {
     {e.palletState== 'blocked' &&
-    options.push({palletID : e.palletID, palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
+    options.push({palletID : e.palletID.toString, palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
 
   });
   console.log(options)
+  const [input,setInput]=useState('');
+  const handleChange = (e) => {
+        e.preventDefault();
+        setInput(e.target.value)
+    }
+    if (input.length>0) {
+      options=options.filter((i)=>{      
+           if ((i.palletCreator.match(input))){
+            return(i.palletCreator.match(input))
+          }
+      })
+    }
 
   return(
 
-    <div >
+     <div >
         <Back />
-      <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>blocked Pallets</h1>
-              <div style={{marginLeft:'80%'}}>
-              <form style={{  marginTop:'3%' ,marginBottom:'2%'}} onSubmit = {handleSubmit}  style={{}}>
-  <input type='text' onChange = {(e) => setName(e.target.value)} value = {name} ></input> 
-      <Button variant="primary" style={{marginLeft:'4%'}} type='submit'>Search</Button>
-</form>
+      <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Blocked Pallets</h1>
+              <div style={{marginLeft:'87%'}}>
+          <input type='text' onChange = {handleChange} value = {input} ></input> 
               </div>
        {loading && <Spinner size="large" />}       
       {!loading && (

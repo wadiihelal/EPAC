@@ -15,12 +15,12 @@ const y =[776,'Tunisia',"Algeria",77,89]
 function addPallet() {
   const [pallets,setPallets] =useState([])
 const [zones,setZones]=useState([])
-  const[isLoading,setIsLoading]=useState(false)
+  const[isLoading,setIsLoading]=useState(true)
   const router =useRouter()
-  useEffect(() => {
+  
     const fetchData = async () =>{
-      setIsLoading(true);
       try {
+        setIsLoading(true);
         const {data: response} = await axios.get('http://localhost:9090/activezone');
         const {data: resp} = await axios.get('http://localhost:9090/palletByState/ready');
         setZones(response); 
@@ -31,29 +31,38 @@ const [zones,setZones]=useState([])
         console.error(error.message);
       }
     }
+    useEffect(() => {
     fetchData();
- 
-  }, []);
+    }, []);
   const options = [''];
-  const option= [ " "];
+  const option= [''];
   zones.map((e) => {
     option.push({ value: e, label: e });
-  });  
+  }); 
   pallets.map((e) => {
     options.push({ value: e, label: e });
   })
-  const onSubmit =( value) =>{
-    setIsLoading(true) //gbal el exios
-      const postData = async () =>{
-      let res = await axios.post(`http://localhost:9090/affectLoadTag/${value.LoadTag}/${value.Pallets}/${value.Zone}`)
-      let data = res.data;
-      console.log(data);
-      if (data==null)
-        alert('invalid loadtag')
-        }
-        postData();
-       setIsLoading(false) 
+    option.shift() 
+  options.shift() 
 
+  const onSubmit = async( value) =>{
+    // value.preventDefault ()
+      setIsLoading(true) //gbal el exios
+        try{
+          const response = await axios.post(`http://localhost:9090/affectLoadTag/${value.LoadTag}/${value.Pallets}/${value.Zone}`)
+        
+        console.log('data',response?.data);
+        console.log(JSON.stringify(response))
+       alert(`LoadTag ${value.LoadTag} was added with success !`)
+        setIsLoading(false) 
+       }
+      catch (err) {
+           alert('Invalid Pallet LoadTag , please retry')
+           setIsLoading(false)
+             
+
+        }
+    
     // const timer = setTimeout(() => {
 
     //      console.log(value)
@@ -88,7 +97,7 @@ const [zones,setZones]=useState([])
     }, {
       type: "select",
       name: "Pallets",
-      label: "Pallets",
+      label: "Pallet",
       required: true,
       options: options,
     }

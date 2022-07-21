@@ -24,21 +24,41 @@ const Dated = ({ value }) =>{
       </div>)
 }
 
-const callBlock =(name)=>{
-  return(
-  console.log(name)
-    
-  )
+const callBlock =async (name ,value)=>{
+       
+  if (value.toString() ==='false')
+    {try{
+          const response = await axios.put(`http://localhost:9090/activatezone/${name}`)
+        console.log('data',response?.data);
+        console.log(JSON.stringify(response))
+       alert(`Zone ${name} was blocked with success !`)
+       window.location.reload(false);}
+      catch (err) {
+        console.log(err)
+        }
+      }
+  else 
+  {try{
+          const response = await axios.put(`http://localhost:9090/blockzone/${name}`)
+        console.log('data',response?.data);
+        console.log(JSON.stringify(response))
+       alert(`Zone ${name} was blocked with success !`)
+       window.location.reload(false);}
+      catch (err) {
+        console.log(err)
+        }
+      }
+        return(null)
 }
 
 const Main = () => {
   const MenuAction = ({ value,name }) => {
     if(value.toString() === 'true'){
-        return  <MenuItem label="Block" onClick={() => callBlock(name)} />
+        return  <MenuItem label="Disable" onClick={() => callBlock(name,value)} />
     }
     return (
         <>
-            <MenuItem label="Block" onClick={()=> callBlock()} />
+            <MenuItem label="Enable" onClick={()=> callBlock(name,value)} />
             <MenuItem label="Active" onClick={() => console.log(`Delete ${name}`)}/>
         </>
     );
@@ -62,10 +82,7 @@ const Main = () => {
 
 }
    const [name, setName] = useState('');  
-  const handleSubmit = (e) => {
-        e.preventDefault();
-        const y=name
-    }
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
 
@@ -82,32 +99,39 @@ const Main = () => {
     }
     fetchData();
   }, []);
-   const inputs = [
-     {
-      type: "text",
-      name: "name",
-      label: "text",
-      placeHolder: "placeHolder",
-      required: true,
-      defaultValue: "",
-      readOnly: false,
-      hidden: false,
-      multiple: true,
-    },]
+   let options= [];
+  data.map((e,index) => {
+    {
+    options.push({zoneId : e.zoneId.toString(), zoneCreator:e.zoneCreator, zoneDesignation: e.zoneDesignation , zoneDescription : e.zoneDescription,zoneDateCreation:e.zoneDateCreation,zoneActive :e.zoneActive}); }
+
+  });
+    const [input,setInput]=useState('');
+      const handleChange = (e) => {
+            e.preventDefault();
+            setInput(e.target.value)
+        }
+    if (input.length>0) {
+      options=options.filter((i)=>{
+          if ((i.zoneId.toString().match(input))){
+            return(i.zoneId.match(input))
+          }         
+           if ((i.zoneCreator.match(input))){
+            return(i.zoneCreator.match(input))
+          }
+      })
+    }
+    console.log(options)
   return(
 
     <div >
       <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Zone Inventory</h1>
-              <div style={{marginLeft:'80%'}}>
-              <form style={{  marginTop:'3%' ,marginBottom:'2%'}} onSubmit = {handleSubmit}  style={{}}>
-  <input type='text' onChange = {(e) => setName(e.target.value)} value = {name} ></input> 
-      <Button variant="primary" style={{marginLeft:'4%'}} type='submit'>Search</Button>
-</form>
+              <div style={{marginLeft:'87%'}}>
+          <input type='text' onChange = {handleChange} value = {input} ></input> 
               </div>
        {loading && <Spinner size="large" />}       
       {!loading && (
       <div className="rainbow-m-bottom_xx-large" >
-        <TableWithBrowserPagination  pageSize={5} data={data} keyField="id"  >
+        <TableWithBrowserPagination  pageSize={5} data={options} keyField="id"  >
             <Column header="ID" field="zoneId" style={{fontSize:'20px'}} />  
             <Column header="Creator" field="zoneCreator" />
             <Column header="Designation" field="zoneDesignation" style={{fontSize:'20px'}} />
