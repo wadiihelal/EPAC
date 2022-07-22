@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import axios from "axios";
 import { TableWithBrowserPagination, Column, Badge ,Spinner } from 'react-rainbow-components';
 import Back from '../src/components/back'
-
+import AlertReset from "../src/components/alertReset";
 const Dated = ({ value }) =>{
   const x = new Date(value);
   const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
@@ -53,13 +53,18 @@ const Dated = ({ value }) =>{
             </div>
      {loading && <Spinner size="large" />}       
     {!loading && (
-      <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={options} keyField="id" defaultWidth={200} className='tableRainbow'>
+      <div style={{marginTop:'2%'}}>
+        <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={options} keyField="id" defaultWidth={200} className='tableRainbow'>
           <Column header="ID" field="palletID" style={{fontSize:'20px'}} />
           <Column header="Creation Date" field="palletDateCreation" component={Dated} />
           <Column header="Creator" field="palletCreator" />
           <Column header="zoneID" field="zoneId" />
 
       </TableWithBrowserPagination>
+      <div style={{marginLeft:'49%',marginTop:'4%',fontSize:'20px'}}  >
+        <AlertReset id={data.palletID} />
+      </div>
+        </div>
         )}
   </div> 
     )}

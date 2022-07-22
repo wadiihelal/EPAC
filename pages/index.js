@@ -10,13 +10,13 @@ function Home() {
        <br></br>
             <div style={{display :'flex' }}>
             <Button href="addPallet"  size='lg' class='btn btn-primary btn-lg ' type='checkbox' style={{}}>
-              <h1 style={{fontSize:'80px'}}>ADD</h1>
+              <h1 className='wlc'>ADD</h1>
             </Button>  
             <Button href="searchreq" size='lg' class='btn btn-primary ' type='checkbox'  style={{marginLeft:'54%  '}}>
             
 
-             <h1 style={{fontSize:'80px'}}>
-      Consult</h1> 
+             <h1  className='wlc'>
+              Consult</h1> 
             </Button>  
             </div>
         </div> 

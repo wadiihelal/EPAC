@@ -1,12 +1,14 @@
 import React , {useState , useEffect} from 'react';
-import { TableWithBrowserPagination, Column, Badge ,Spinner } from 'react-rainbow-components';
+import { TableWithBrowserPagination, Column, Badge ,Spinner ,ButtonMenu , MenuItem} from 'react-rainbow-components';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import DynamicForm from '../src/components/DynamicForm3'
 import Back from '../src/components/back'
 import { Button } from 'react-bootstrap';
+import {  message  } from 'antd';
+import "antd/dist/antd.css"
 
 const StatusBadge = ({ value }) => {
   console.log('type' , value)
@@ -24,6 +26,54 @@ const Dated = ({ value }) =>{
       </div>)
 }
 const Main = () => {
+          const callBlock =async (name )=>{
+          try{
+                const response = await axios.put(`http://localhost:9090/blockpallet/${name}`)
+                console.log('data',response?.data);
+                console.log(JSON.stringify(response))
+                message.success(`Pallet ${name} was blocked with success !`)
+              window.location.reload(false);}
+              catch (err) {
+                console.log(err)
+                window.location.reload(false);
+                }
+            }
+          // else 
+          // {try{
+          //         const response = await axios.put(`http://localhost:9090/blockzone/${name}`)
+          //       console.log('data',response?.data);
+          //       console.log(JSON.stringify(response))
+          //     alert(`Zone ${name} was blocked with success !`)
+          //     window.location.reload(false);}
+          //     catch (err) {
+          //       console.log(err)
+          //       }
+          //     }
+      const MenuAction = ({ name }) => {
+        return (
+            <>
+                <MenuItem label="Block" onClick={()=> callBlock(name)} />
+            </>
+        );
+    };
+    const ButtonAction = props => {
+    const { value, row:{ palletID } }=props;
+        return (
+                 <div>
+                   <ButtonMenu
+            id="button-menu-2"
+            menuAlignment="right"
+            menuSize="x-small"
+            icon={<FontAwesomeIcon icon={faEllipsisV} />}
+            buttonVariant="base"
+            className="rainbow-m-left_xx-small"
+        >            
+          <MenuAction value={props.row.zoneActive} name={palletID}/>
+          </ButtonMenu>
+                 </div>
+        )
+
+}
   const [name, setName] = useState('');  
 
   const [loading, setLoading] = useState(true);
@@ -70,7 +120,7 @@ const Main = () => {
     <div >
         <Back />
       <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Ready Pallets</h1>
-              <div style={{marginLeft:'87%'}}>
+              <div style={{marginLeft:'85%',marginBottom:'1%'}}>
           <input type='text' onChange = {handleChange} value = {input} ></input> 
               </div>
        {loading && <Spinner size="large" />}       
@@ -80,7 +130,7 @@ const Main = () => {
             <Column header="Creation Date" field="palletDateCreation" component={Dated} />
             <Column header="Creator" field="palletCreator" />
             <Column header="zoneID" field="zoneId" />
-
+            <Column field="status" component={ButtonAction} width={60}/>
         </TableWithBrowserPagination>
           )}
     </div> 

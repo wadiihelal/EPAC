@@ -31,7 +31,7 @@ const callBlock =async (name ,value)=>{
           const response = await axios.put(`http://localhost:9090/activatezone/${name}`)
         console.log('data',response?.data);
         console.log(JSON.stringify(response))
-       alert(`Zone ${name} was blocked with success !`)
+       alert(`Zone ${name} was enabled with success !`)
        window.location.reload(false);}
       catch (err) {
         console.log(err)
@@ -59,7 +59,6 @@ const Main = () => {
     return (
         <>
             <MenuItem label="Enable" onClick={()=> callBlock(name,value)} />
-            <MenuItem label="Active" onClick={() => console.log(`Delete ${name}`)}/>
         </>
     );
 };

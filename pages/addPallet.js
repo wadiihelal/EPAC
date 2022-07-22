@@ -8,6 +8,10 @@ import axios from "axios";
 import { useRouter }  from "next/router";
 import DynamicForm from '../src/components/DynamicForm3'
 import { Spinner } from 'react-rainbow-components';
+import {  message  } from 'antd';
+import "antd/dist/antd.css"
+
+
 
 const x = [1,2,3,4];
 const y =[776,'Tunisia',"Algeria",77,89]
@@ -53,12 +57,12 @@ const [zones,setZones]=useState([])
         
         console.log('data',response?.data);
         console.log(JSON.stringify(response))
-       alert(`LoadTag ${value.LoadTag} was added with success !`)
+        message.success(`LoadTag ${value.LoadTag} was added with success !`)
         setIsLoading(false) 
        }
       catch (err) {
-           alert('Invalid Pallet LoadTag , please retry')
-           setIsLoading(false)
+        message.error('Invalid Pallet LoadTag , please retry')
+        setIsLoading(false)
              
 
         }

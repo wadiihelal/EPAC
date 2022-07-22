@@ -194,7 +194,13 @@ padding-left:8%;
   align-content: center;
 
 }
-
+.resetButton{
+    align-content: center;
+    margin-top: 4%;
+    margin-left: 48%;
+    width: 30%;
+    font-size: x-large;
+}
 
 
 
@@ -227,6 +233,12 @@ h1 {
   font-weight: 100;
   text-align: center;
 }
+.wlc{
+  font-size :80px;
+  color :white;
+  margin-bottom :0em !important;
+  margin-top: 00.2em ;
+}
 
 
 
@@ -247,9 +259,7 @@ label {
   text-align: left;
   display: block;
   margin-bottom: 13px;
-  margin-top: 20px;
   color: black;
-  font-size: 14px;
   font-weight: 200;
 }
 
