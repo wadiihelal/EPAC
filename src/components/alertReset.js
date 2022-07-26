@@ -36,7 +36,7 @@ const [isVisible,setIsVisible] = useState(false)
 
 
     return <section>
-            
+              
     <Button  value="Graph" onClick={() => changeModal()} variant="btn btn-danger" style={{fontSize:'28px' , borderRadius: "1rem"}}>Reset</Button>
     <Modal 
         visible={isVisible}
