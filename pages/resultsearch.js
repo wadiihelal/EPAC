@@ -59,7 +59,7 @@ const Dated = ({ value }) =>{
     else return(
       <div >
       <Back />
-    <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Searching Pallet</h1>
+    <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Searching LoadTag & Pallet</h1>
             <div style={{marginLeft:'80%'}}>
             <form style={{  marginTop:'3%' ,marginBottom:'2%'}} ></form>
             </div>

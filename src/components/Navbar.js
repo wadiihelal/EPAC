@@ -35,6 +35,11 @@ function Navbar() {
 										Pallet Inventory
 									</Link>										
 									<Link
+										href="/load"
+										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+									>
+										Active LoadTags list  
+									</Link>										<Link
 										href="/stats"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>

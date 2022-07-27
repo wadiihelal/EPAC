@@ -90,8 +90,6 @@
 import axios from 'axios';
 import { Chart, Dataset } from 'react-rainbow-components';
 const Main = () => {
-   const [name, setName] = useState('');  
-
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
 
@@ -112,6 +110,7 @@ const Main = () => {
   let labels= [];
   let donnees=[]
   labels=Object.keys(data)
+  
   donnees=Object.values(data)
   console.log(donnees)
   const dataset = [
