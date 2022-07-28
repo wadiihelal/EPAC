@@ -26,7 +26,7 @@ const Dated = ({ value }) =>{
             const {data: response} =  await axios.get(`http://localhost:9090/palletLoadTag/${router.query.name}`)
             setData(response);
             console.log(data)
-                    setLoading(false);
+            setLoading(false);
 
           } catch (error) {
             console.error(error.message);
@@ -39,8 +39,8 @@ const Dated = ({ value }) =>{
 
          const options= [];
          options.push(data)       
-         console.log(data,'data')
-        if (data==null){
+
+        if (data==[] || data==null){
           return(
                         
               <div>
