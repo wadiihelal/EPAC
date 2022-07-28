@@ -3,8 +3,6 @@ import axios from 'axios';
 import Back from './back'
 import { Chart, Dataset } from 'react-rainbow-components';
 const Main = () => {
-   const [name, setName] = useState('');  
-
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
 

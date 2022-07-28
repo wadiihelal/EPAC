@@ -49,7 +49,7 @@ const Dated = ({ value }) =>{
             <div style={{marginTop:'10%'}}>
               <Result
               status="warning"
-              title="There are some problems with your operation."
+              title="This Loadtag is free , please add a new one !"
             />
             </div>
              </div>)
