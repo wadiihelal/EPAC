@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState , useEffect } from "react";
 import axios from "axios";
 import {  notification, Space } from 'antd';
+import BusyPallet from "../src/components/busyPallet";
 
 function Home ()
 {   
@@ -33,10 +34,10 @@ function Home ()
       setLoading(true);
       console.log(loading)
 
-        notification.open({
+      notification['warning']({
           message: 'Zone Notification',
           description:
-           `The zone ${zone} gots ${nb} pallets , go check it now !`,
+           ` ${zone} has ${nb} pallets , go check it now !`,
           className: 'custom-class',
           btn,
           btnclose,
@@ -61,7 +62,8 @@ function Home ()
   }, [] );
 
     return (
-     <div  className="centre">
+      <div className="centre">
+        <BusyPallet />
        <div style ={{fontFamily: 'lucida grande',fontSize:'75px',color:' #141823',marginLeft:'20%'}}>
        </div>
        <br></br>

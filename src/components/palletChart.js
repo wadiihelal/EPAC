@@ -13,7 +13,6 @@ const Main = () => {
             try {
             const {data: response} = await axios.get('http://localhost:9090/TimeActivation');
             setData(response);
-            console.log(res)
             } catch (error) {
             console.error(error.message);
             }
@@ -30,7 +29,6 @@ const Main = () => {
     let donnees=[]
     labels=Object.keys(data)
     donnees=Object.values(data)
-    console.log("🚀 ~ file: palletChart.js ~ line 30 ~ Main ~ donnees", donnees)
     return (
         <div > 
             <div className="rainbow-p-vertical_large" style={{marginLeft:"32%",marginRight:"32%"}}>
