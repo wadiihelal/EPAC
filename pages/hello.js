@@ -6,22 +6,13 @@ import Back from "../src/components/back";
 import PalletChart from "../src/components/palletChart";
 import { Button, notification } from 'antd';
 
-export default function Stat ()
+export default function Hello ()
 {
 
   
   return (
         
-    <div>
-      <Back />
-         <div style={{marginTop:'4%',width:'100%',justifyContent: 'space-around',display:'flex'}}>
-        <Indexpallet />
-        <Indexzone />
-        </div>
-        <div>
-        <PalletChart />
-
-        </div>
+<div>
 </div>
   )
 }

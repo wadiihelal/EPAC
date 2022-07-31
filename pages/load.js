@@ -75,7 +75,7 @@ const Main = () => {  const router = useRouter();
           )}
     </div> 
 )}
-export default function load ()
+export default function Load ()
 {
   return(
       <div>

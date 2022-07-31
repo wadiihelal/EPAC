@@ -146,7 +146,7 @@ const Main = () => {
           )}
     </div> 
 )}
-export default function index ()
+export default function Zone ()
 {
   return(
       <div>

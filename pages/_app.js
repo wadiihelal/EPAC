@@ -4,10 +4,10 @@ import '../styles/globals.css';
 import'../styles/App.css'
 import codeabarre from '../src/download.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TabsetExample from './test';
 
 
-
-const Layout = ({ children }) => <div><Navbar/> {children}</div>;
+const Layout = ({ children }) => <div><TabsetExample/> {children}</div>;
 
 export default function MyApp({ Component, pageProps }){
 	return (
