@@ -8,6 +8,7 @@ import {  notification, Space } from 'antd';
 import BusyPallet from "../src/components/busyPallet";
 import TabsetExample from './test'
 
+
 function Home ()
 {   
   const [name, setName] = useState('');  

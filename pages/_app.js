@@ -5,9 +5,9 @@ import'../styles/App.css'
 import codeabarre from '../src/download.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TabsetExample from './test';
+import SideNavbar from '../components/SideNavbar'
 
-
-const Layout = ({ children }) => <div><TabsetExample/> {children}</div>;
+const Layout = ({ children }) => <div><SideNavbar/> {children}</div>;
 
 export default function MyApp({ Component, pageProps }){
 	return (
