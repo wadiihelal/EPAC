@@ -14,9 +14,6 @@ export default function Stat ()
   return (
         
     <div>
-        <Button type="primary" onClick={openNotification}>
-    Open the notification box
-  </Button>
       <Back />
          <div style={{marginTop:'4%',width:'100%',justifyContent: 'space-around',display:'flex'}}>
         <Indexpallet />
