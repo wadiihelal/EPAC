@@ -4,6 +4,7 @@ import Indexpallet from "../src/components/palletStats";
 import Indexzone from "../src/components/zoneStats";
 import Back from "../src/components/back";
 import PalletChart from "../src/components/palletChart";
+import BusyPallet from '../src/components/busyPallet';
 import { Button, notification } from 'antd';
 
 export default function Stat ()
@@ -13,6 +14,9 @@ export default function Stat ()
   return (
         
     <div>
+        <Button type="primary" onClick={openNotification}>
+    Open the notification box
+  </Button>
       <Back />
          <div style={{marginTop:'4%',width:'100%',justifyContent: 'space-around',display:'flex'}}>
         <Indexpallet />
