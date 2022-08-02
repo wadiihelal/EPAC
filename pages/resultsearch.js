@@ -6,6 +6,7 @@ import Back from '../src/components/back'
 import AlertReset from "../src/components/alertReset";
 import { Button, Result } from 'antd';
 
+
 const Dated = ({ value }) =>{
   const x = new Date(value);
   const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()

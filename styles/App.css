@@ -42,8 +42,8 @@
   position: relative; 
   width: 50%;
   margin-top:18%;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .arrayResult{
   width:auto;
@@ -115,7 +115,7 @@ input:focus {
 a {
   text-decoration: none !important;
   outline: none !important;
-  color: #0d6efd !important;
+  color: black !important;
 }
 
 a:hover {
@@ -203,13 +203,6 @@ padding-left:8%;
     width: 30%;
     font-size: x-large;
 }
-
-
-
-
-
-
-
 
 /* centre add */
 

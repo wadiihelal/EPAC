@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+ 
+import { faBoxesStacked, faHouseUser,faMagnifyingGlassChart,faPallet,faWarehouse} from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
-function Navbar() {
+function Navbar ()
+{
+	const router = useRouter()
+
 	return (
 		<div>
 			<nav className=" shadow-sm  w-full ">
@@ -14,40 +21,54 @@ function Navbar() {
 									EPAC <span  href="/" className="text-blue-500">Technologies</span>
 								</h1>
 							</div>
-							<div style={{textDecoration:'none'}} className="hidden md:block">
-								<div  className="ml-10 flex items-baseline space-x-4">
+							<div className="hidden md:block">
+								<div style={{textDecoration:'none'}} className="ml-10 flex items-baseline space-x-4">
+								<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faHouseUser} onClick={() => router.push('/')}  />
+
 									<Link
 										href="/"
 										smooth={true}
 										offset={50}
 										duration={500}
-										className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md hover:font-black"
+										icon={faHouseUser}
+										className="cursor-pointer font-black font-semibold px-3 py-2 text-md hover:font-black"
+										style={{color:"black"}}
 																		>
-										Home
+										Home     |
+									
 									</Link>
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faWarehouse}  />
+
 									<Link
 										href="/zoneInventory"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Zone Inventory
-									</Link>										
+									Zone Inventory     |
+									</Link>		
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faPallet}  />
+								
 									<Link
 										href="/menu"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Pallet Inventory
-									</Link>										
+										Pallet Inventory    |
+									</Link>	
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faBoxesStacked}  />
+
 									<Link
 										href="/load"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Active LoadTags list  
-									</Link>										<Link
+										Active LoadTags list    |  
+									</Link>
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-2%	"}} icon={faMagnifyingGlassChart}  />
+<Link
 										href="/stats"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Statistics
-									</Link>							
+									</Link>		
+
 								</div>
 							</div>
 						</div>

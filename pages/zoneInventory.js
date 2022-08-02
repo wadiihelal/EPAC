@@ -8,7 +8,7 @@ import DynamicForm from '../src/components/DynamicForm3'
 import { Button } from 'react-bootstrap';
 import Back from '../src/components/back'
 import Block from '../src/components/block';
-
+import dayjs from "dayjs";
 const StatusBadge = ({ value }) => {
       if (value.toString() === 'true') {
         return <Badge label='active' variant="success"/>;
@@ -16,12 +16,9 @@ const StatusBadge = ({ value }) => {
     return <Badge label='inactive' variant="error" className="rainbow-m-left_small" />;
 }
 const Dated = ({ value }) =>{
-      const x = new Date(value);
-      const y = " " + x.getHours().toString() + ":" +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
-      return (
-      <div>
-        {y}
-      </div>)
+     // const x = new Date(value);
+      const tidyDate = dayjs(value).format("MMM D, YY h:mm A");
+      return <span>{tidyDate}</span>;      
 }
 
 const callBlock =async (name ,value)=>{
@@ -110,23 +107,26 @@ const Main = () => {
             setInput(e.target.value)
         }
     if (input.length>0) {
+      
       options=options.filter((i)=>{
           if ((i.zoneId.toString().match(input))){
             return(i.zoneId.match(input))
           }         
            if ((i.zoneCreator.match(input))){
             return(i.zoneCreator.match(input))
-          }
+           }
+        
       })
     }
-    console.log(options)
   return(
 
     <div >
       <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Zone Inventory</h1>
-              <div style={{marginLeft:'87%'}}>
-          <input type='text' onChange = {handleChange} value = {input} ></input> 
+      <div style={{marginLeft:'87%',marginBottom:'2%'}}>
+          <input type='text' onChange = {handleChange}  class="form-control"value = {input}placeholder="Search" aria-label="Search" aria-describedby="search-addon" ></input> 
+             
               </div>
+              
        {loading && <Spinner size="large" />}       
       {!loading && (
       <div className="rainbow-m-bottom_xx-large" >
@@ -156,4 +156,3 @@ export default function Zone ()
 
   )
 }
- 

@@ -59,14 +59,14 @@ const Main = () => {  const router = useRouter();
   return(
 
     <div >
-        <Back />
+       
       <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>LoadTags & Pallets</h1>
               <div style={{marginLeft:'87%'}}>
               </div>
        {loading && <Spinner size="large" />}       
       {!loading && (
-          <div style={{marginLeft:'20%',marginRight:'20%',textAlign:'center'}}>
-        <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={data} keyField="id" defaultWidth={200} className='tableRainbow'>
+          <div style={{textAlign:'center'}}>
+        <TableWithBrowserPagination  paginationAlignment="right" pageSize={5} data={data} keyField="id" defaultWidth={200} className='tableRainbow'>
             <Column header="LoadTag ID" field="loadId" style={{fontSize:'20px'}} />
             <Column header="Pallet ID" field="palletID" />
             <Column field="status" component={ButtonAction} width={60}/>
@@ -78,10 +78,11 @@ const Main = () => {  const router = useRouter();
 export default function Load ()
 {
   return(
-      <div>
+    <div>
+                 <Back />
+
         <Main />
       </div>
 
   )
 }
- 

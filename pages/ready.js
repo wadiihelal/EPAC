@@ -3,13 +3,12 @@ import { TableWithBrowserPagination, Column, Badge ,Spinner ,ButtonMenu , MenuIt
 import styled from 'styled-components';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faEllipsisV,faLeftLong } from '@fortawesome/free-solid-svg-icons';
 import DynamicForm from '../src/components/DynamicForm3'
 import Back from '../src/components/back'
 import { Button } from 'react-bootstrap';
 import {  message  } from 'antd';
 import "antd/dist/antd.css"
-
 const StatusBadge = ({ value }) => {
   console.log('type' , value)
       if (value.toString() === 'true') {
@@ -18,12 +17,9 @@ const StatusBadge = ({ value }) => {
     return <Badge label='inactive' variant="error" className="rainbow-m-left_small" />;
 }
 const Dated = ({ value }) =>{
-      const x = new Date(value);
-      const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
-      return (
-      <div>
-        {y}
-      </div>)
+  // const x = new Date(value);
+   const tidyDate = dayjs(value).format("MMM D, YY h:mm A");
+   return <span>{tidyDate}</span>;      
 }
 const Main = () => {
           const callBlock =async (name )=>{
@@ -118,10 +114,13 @@ const Main = () => {
   return(
 
     <div >
-        <Back />
+     
+  
+
       <h1 style={{marginTop:'5%' , marginBottom:'4%'}}>Ready Pallets</h1>
-              <div style={{marginLeft:'85%',marginBottom:'1%'}}>
-          <input type='text' onChange = {handleChange} value = {input} ></input> 
+      <div style={{marginLeft:'87%',marginBottom:'2%'}}>
+          <input type='text' onChange = {handleChange}  class="form-control"value = {input}placeholder="Search" aria-label="Search" aria-describedby="search-addon" ></input> 
+             
               </div>
        {loading && <Spinner size="large" />}       
       {!loading && (
@@ -138,10 +137,10 @@ const Main = () => {
 export default function active ()
 {
   return(
-      <div>
+    <div>
+                <Back />
         <Main />
       </div>
 
   )
 }
- 
