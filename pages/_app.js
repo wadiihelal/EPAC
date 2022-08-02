@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TabsetExample from './test';
 import SideNavbar from '../components/SideNavbar'
 
-const Layout = ({ children }) => <div><SideNavbar/> {children}</div>;
+const Layout = ({ children }) => <div><Navbar/> {children}</div>;
 
 export default function MyApp({ Component, pageProps }){
 	return (
