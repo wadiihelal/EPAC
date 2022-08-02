@@ -65,14 +65,14 @@ function Home ()
     return (
       <div className="centre">
         <BusyPallet />
-       <div style ={{fontFamily: 'lucida grande',fontSize:'75px',color:' #141823',marginLeft:'20%'}}>
+       <div style ={{fontFamily: 'lucida grande',fontSize:'70px',color:' #141823',marginLeft:'20%'}}>
        </div>
        <br></br>
             <div style={{display :'flex' }}>
-            <Button href="addPallet"  size='lg' class='btn btn-primary btn-lg ' type='checkbox' style={{}}>
+            <Button href="addPallet"  size='lg' class='btn btn-primary btn-lg ' type='checkbox' style={{borderRadius:'27px'}}>
               <h1 className='wlc'>ADD</h1>
             </Button>  
-            <Button href="searchreq" size='lg' class='btn btn-primary ' type='checkbox'  style={{marginLeft:'54%  '}}>
+            <Button href="searchreq" size='lg' class='btn btn-primary ' type='checkbox'  style={{marginLeft:'54%',borderRadius:'27px'}}>
             
 
              <h1  className='wlc'>

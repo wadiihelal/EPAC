@@ -42,7 +42,7 @@ const Main = () => {
                 className="rainbow-align-content_center rainbow-m-vertical_large rainbow-m_auto"
             >
                 <Chart labels={labels} type="horizontalBar">
-                    <Dataset key="Sales" title="Occupation days" values={donnees} backgroundColor="#01b6f5" />
+                    <Dataset key="Sales" title="Occupation days" values={donnees} backgroundColor="#1e81b0" />
                 </Chart>
             </div>
             </div>

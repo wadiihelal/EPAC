@@ -6,6 +6,11 @@ import axios from "axios";
 import { Spinner } from "react-rainbow-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import resultSearch from "./resultsearch";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+ 
+import { faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+
+
 function Searchreq () 
 
 {
@@ -39,12 +44,13 @@ function Searchreq ()
              {loading && <Spinner size="large" />} 
             <div> 
             {!loading && (
-            <div className=" centre">
+            <div className=" centreRech">
            <form onSubmit = {handleSubmit} >
-             <input type="search" className="form-control form-rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style={{height:'150%', borderRadius: "1rem"}} onChange = {(e) => setName(e.target.value)} value = {name} />
+             <input type="search" className="form-control form-rounded" placeholder="Tap the LoadTag here ..." aria-label="Search" aria-describedby="search-addon" style={{height:'150%', borderRadius: "1rem"}} onChange = {(e) => setName(e.target.value)} value = {name} />
             <br></br>
             <span>
-            <Button variant="btn btn-primary" style={{marginLeft:'25%',fontSize:'x-large',width:'50%' }} type='submit'>Search</Button>
+            <Button variant="btn btn-primary" style={{marginLeft:'25%',fontSize:'x-large',width:'50%' }} type='submit'>	Search	<FontAwesomeIcon  icon={faMagnifyingGlass}  />
+</Button>
             </span>
            </form>
             </div>)}

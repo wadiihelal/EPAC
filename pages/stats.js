@@ -4,7 +4,6 @@ import Indexpallet from "../src/components/palletStats";
 import Indexzone from "../src/components/zoneStats";
 import Back from "../src/components/back";
 import PalletChart from "../src/components/palletChart";
-import BusyPallet from '../src/components/busyPallet';
 import { Button, notification } from 'antd';
 
 export default function Stat ()
