@@ -23,9 +23,8 @@ function Navbar ()
 							</div>
 							<div className="hidden md:block">
 								<div style={{textDecoration:'none'}} className="ml-10 flex items-baseline space-x-4">
-									<a href='/'>
-									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faHouseUser} />
-									{"   "}
+								<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faHouseUser} onClick={() => router.push('/')}  />
+
 									<Link
 										href="/"
 										smooth={true}
@@ -35,50 +34,41 @@ function Navbar ()
 										className="cursor-pointer font-black font-semibold px-3 py-2 text-md hover:font-black"
 										style={{color:"black"}}
 																		>
-										  Home  
+										Home     |
 									
-										</Link>
-									</a>
-									<a	href="/zoneInventory">
-									<FontAwesomeIcon  icon={faWarehouse}  />
-									{" "}
+									</Link>
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faWarehouse}  />
+
 									<Link
 										href="/zoneInventory"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-									Zone Inventory  
-										</Link>		
-									</a>
-									<a href="/menu">
-									<FontAwesomeIcon  icon={faPallet}  />
-									{" "}
+									Zone Inventory     |
+									</Link>		
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faPallet}  />
+								
 									<Link
 										href="/menu"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Pallet Inventory    
-										</Link>	
-									</a>
-									<a href="/load">
-									<FontAwesomeIcon  icon={faBoxesStacked}  />
-									{" "}
+										Pallet Inventory    |
+									</Link>	
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-1%	"}} icon={faBoxesStacked}  />
+
 									<Link
 										href="/load"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Active LoadTags list      
-										</Link>
-									</a>
-									<a href="/stats">
-									<FontAwesomeIcon icon={faMagnifyingGlassChart} />
-									{" "}
-										<Link
+										Active LoadTags list    |  
+									</Link>
+									<FontAwesomeIcon style={{marginLeft:'1%' ,marginRight:"-2%	"}} icon={faMagnifyingGlassChart}  />
+<Link
 										href="/stats"
 										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Statistics
 									</Link>		
-									</a>
+
 								</div>
 							</div>
 						</div>
