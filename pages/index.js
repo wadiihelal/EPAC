@@ -6,7 +6,6 @@ import { useState , useEffect } from "react";
 import axios from "axios";
 import {  notification, Space } from 'antd';
 import BusyPallet from "../src/components/busyPallet";
-import TabsetExample from './test'
 
 
 function Home ()
