@@ -46,9 +46,10 @@ const Main = () => {
     let options= [];
   data.map((e,index) => {
     {e.palletState== 'blocked' &&
-    options.push({palletID : e.palletID.toString, palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
+    options.push({palletID : e.palletID, palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
 
-  });
+  } );
+  console.log("🚀 ~ file: blocked.js ~ line 50 ~ data.map ~ options", options)
   console.log(options)
   const [input,setInput]=useState('');
   const handleChange = (e) => {
@@ -75,6 +76,7 @@ const Main = () => {
        {loading && <Spinner size="large" />}       
       {!loading && (
         <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={options} keyField="id" defaultWidth={200} className='tableRainbow'>
+            <Column header="ID" field="palletID" style={{fontSize:'20px'}} />
             <Column header="Creation Date" field="palletDateCreation" component={Dated} />
             <Column header="Creator" field="palletCreator" />
             <Column header="zoneID" field="zoneId" />
