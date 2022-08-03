@@ -18,13 +18,13 @@ function Menu ()
 
     <div style={{margin:'auto'}} >
     <Button className="menuButtonCentre" variant="success" size="lg" href="active">
-        <h1 style={{fontSize:'70px',color:'white'}}>Active</h1>
+        <h1 style={{fontSize:'70px',color:'white',borderRadius:'20px'}}>Active</h1>
     </Button>
     <Button className="menuButtonCentre"  variant="warning" href="ready">
-    <h1 style={{fontSize:'70px'}}>Ready</h1>
+    <h1 style={{fontSize:'70px' ,borderRadius:'20px'}}>Ready</h1>
     </Button>
     <Button className="menuButtonCentre" variant="danger" href='blocked'>
-    <h1 style={{fontSize:'70px',color:'white'}}>Blocked</h1>
+    <h1 style={{fontSize:'70px',color:'white',borderRadius:'20px'}}>Blocked</h1>
     </Button>
     <div style={{textAlign:'center',marginLeft:'2%',marginTop:'5%'}}>
     
