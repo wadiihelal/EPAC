@@ -75,7 +75,6 @@ const Main = () => {
        {loading && <Spinner size="large" />}       
       {!loading && (
         <TableWithBrowserPagination paginationAlignment="right" pageSize={5} data={options} keyField="id" defaultWidth={200} className='tableRainbow'>
-            <Column header="ID" field="palletID" style={{fontSize:'20px'}} />
             <Column header="Creation Date" field="palletDateCreation" component={Dated} />
             <Column header="Creator" field="palletCreator" />
             <Column header="zoneID" field="zoneId" />
