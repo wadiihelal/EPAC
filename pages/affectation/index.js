@@ -43,7 +43,7 @@ const Test = () => {
   {
      const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/affectLoadTag/${value.loadTag}/${value.pallet}/${value.zone}`)      
       console.log('data',response?.data);
-      console.log(JSON.stringify(response))
+      // console.log(JSON.stringify(response))
       message.success(`LoadTag ${value.loadTag} was added with success !`)
      }
     catch (err) {

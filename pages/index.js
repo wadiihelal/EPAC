@@ -75,7 +75,7 @@ function Home ()
        </div>
        <br></br>
             <div style={{display :'flex' }}>
-            <Button href="addPallet"  size='lg' class='btn btn-primary btn-lg ' type='checkbox' style={{borderRadius:'27px'}}>
+            <Button href="affectation"  size='lg' class='btn btn-primary btn-lg ' type='checkbox' style={{borderRadius:'27px'}}>
               <h1 className='wlc'>ADD</h1>
             </Button>  
             <Button href="searchreq" size='lg' class='btn btn-primary ' type='checkbox'  style={{marginLeft:'54%',borderRadius:'27px'}}>

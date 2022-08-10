@@ -55,7 +55,7 @@ function addPallet() {
           const response = await axios.post(`http://localhost:9090/affectLoadTag/${value.LoadTag}/${value.Pallets}/${value.Zone}`)
         
         console.log('data',response?.data);
-        console.log(JSON.stringify(response))
+        // console.log(JSON.stringify(response))
         message.success(`LoadTag ${value.LoadTag} was added with success !`)
         setIsLoading(false) 
        }

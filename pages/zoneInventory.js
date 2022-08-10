@@ -27,7 +27,7 @@ const callBlock =async (name ,value)=>{
     {try{
           const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/activatezone/${name}`)
         console.log('data',response?.data);
-        console.log(JSON.stringify(response))
+        // console.log(JSON.stringify(response))
        alert(`Zone ${name} was enabled with success !`)
        window.location.reload(false);}
       catch (err) {
@@ -38,7 +38,7 @@ const callBlock =async (name ,value)=>{
   {try{
           const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/blockzone/${name}`)
         console.log('data',response?.data);
-        console.log(JSON.stringify(response))
+        // console.log(JSON.stringify(response))
        alert(`Zone ${name} was blocked with success !`)
        window.location.reload(false);}
       catch (err) {

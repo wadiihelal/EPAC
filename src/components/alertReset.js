@@ -25,7 +25,7 @@ const [isVisible,setIsVisible] = useState(false)
           try{
                 const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/resetpallet/${id}`)
                 console.log('data',response?.data);
-                console.log(JSON.stringify(response))
+                // console.log(JSON.stringify(response))
                 message.success(`Pallet ${id} is resetted`)
                 router.push('/searchreq')}
               catch (err) {

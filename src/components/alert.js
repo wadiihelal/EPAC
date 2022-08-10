@@ -54,7 +54,7 @@ function Alerts ()
             const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/createPallet/${value.creator}/${value.zone}`)
           
           console.log('data',response?.data);
-            console.log( JSON.stringify( response ) )
+            // console.log( JSON.stringify( response ) )
             changeModal(true)
           message.success(`Pallet ${value.creator} was added with success in Zone ${value.zone} !`)
           setIsLoading(false) 
