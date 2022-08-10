@@ -47,7 +47,7 @@ const Main = () => {
     let options= [];
   data.map((e,index) => {
     {e.palletState== 'active' &&
-    options.push({palletID : e.palletID.toString(), palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
+    options.push({palletID : e.palletID.toString(), palletDateCreation:e.palletDateCreation, zoneDesignation: e.zoneDesignation , palletState : e.palletState,palletCreator:e.palletCreator}); }
 
   });
   console.log(options)
@@ -82,7 +82,7 @@ const Main = () => {
             {/* <Column header="Status" field="palletState" /> */}
             <Column header="Creation Date" field="palletDateCreation" component={Dated} />
             <Column header="Creator" field="palletCreator" />
-            <Column header="zoneID" field="zoneId" />
+            <Column header="Zone" field="zoneDesignation" />
 
         </TableWithBrowserPagination>
           )}

@@ -95,7 +95,7 @@ const Main = () => {
     let options= [];
   data.map((e,index) => {
     {e.palletState== 'ready' &&
-    options.push({palletID : e.palletID.toString(), palletDateCreation:e.palletDateCreation, zoneId: e.zoneId , palletState : e.palletState,palletCreator:e.palletCreator}); }
+    options.push({palletID : e.palletID.toString(), palletDateCreation:e.palletDateCreation, zoneDesignation: e.zoneDesignation , palletState : e.palletState,palletCreator:e.palletCreator}); }
 
   });
   const [input,setInput]=useState('');
@@ -130,7 +130,7 @@ const Main = () => {
             <Column header="ID" field="palletID" style={{fontSize:'20px'}} />
             <Column header="Creation Date" field="palletDateCreation" component={Dated} />
             <Column header="Creator" field="palletCreator" />
-            <Column header="zoneID" field="zoneId" />
+            <Column header="Zone" field="zoneDesignation" />
             <Column field="status" component={ButtonAction} width={60}/>
         </TableWithBrowserPagination>
           )}
