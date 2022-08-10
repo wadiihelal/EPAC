@@ -31,7 +31,7 @@ const Test = () => {
     hidden: false,
     readOnly: false,
   };
-
+   
   const initialValues = {
     zone: "",
     pallet: "",
