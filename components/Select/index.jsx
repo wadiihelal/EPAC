@@ -44,8 +44,8 @@ const Index = ({ name, label, options, readOnly, hidden ,onValueChange,defaultVa
                   id="example-select-1"
                   onChange={onChange}
                   value={val}
-                  // style={containerStyles}
-                  //     className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
+                  //   style={containerStyles}
+                       className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
                 />
                 <ErrorMessage name={name}>
                   {(msg) => <Msg>{msg}</Msg>}

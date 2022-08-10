@@ -32,7 +32,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('http://localhost:9090/pallets');
+        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/pallets');
         setData(response);
         console.log(response)
       } catch (error) {

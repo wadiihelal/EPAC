@@ -12,24 +12,26 @@ export default function BusyPallet () {
     useEffect(() => {
     const fetchData = async () =>{
         try {
-        const {data: response} = await axios.get('http://localhost:9090/maxDaysActive');
+          const { data: response } = await axios.get( 'https://murmuring-reef-55468.herokuapp.com/maxDaysActive' );
+          console.log("🚀 ~ file: busyPallet.js ~ line 16 ~ fetchData ~ response", response)
+          
             setData( response );
             Object.keys( response ).map( ( palletId ) =>{
                 let x = response[ palletId ]
                 
-    notification['error']({
-            message: 'Pallet Notification',
-            description:
-             `${palletId} has ${response[palletId]} days active ⚠️!`,
-        className: 'custom-class',
-        duration: 0,
-            placement: RadiusBottomrightOutlined,
+            notification['error']({
+                    message: 'Pallet Notification',
+                    description:
+                    `${palletId} has ${response[palletId]} days active ⚠️!`,
+                className: 'custom-class',
+                duration: 0,
+                    placement: RadiusBottomrightOutlined,
             
           });
         
     })
         } catch (error) {
-        console.error(error.message);
+        console.error(error);
         }
     }
     fetchData();

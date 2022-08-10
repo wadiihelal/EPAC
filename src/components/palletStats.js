@@ -10,7 +10,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('http://localhost:9090/nbState');
+        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/nbState');
         setData(response);
         console.log(res)
       } catch (error) {

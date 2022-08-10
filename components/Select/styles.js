@@ -14,6 +14,7 @@ export const StyledLabel = styled.label`
   margin-bottom:3%;
   margin-left:3%;
   text-align: center;
+  
   `;
 export const Msg = styled.span``;
 // export const StyledSelect = styled.select`

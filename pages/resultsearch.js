@@ -29,7 +29,7 @@ const Dated = ({ value }) =>{
           setLoading(true);
 
           try {
-            const {data: response} =  await axios.get(`http://localhost:9090/palletLoadTag/${router.query.name}`)
+            const {data: response} =  await axios.get(`https://murmuring-reef-55468.herokuapp.com/palletLoadTag/${router.query.name}`)
             setData(response);
             console.log(data)
             setLoading(false);
