@@ -15,7 +15,7 @@ const Main = () => {  const router = useRouter();
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/lotTags');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/lotTags');
         setData(response);
         console.log(response)
       } catch (error) {

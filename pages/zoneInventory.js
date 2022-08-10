@@ -25,7 +25,7 @@ const callBlock =async (name ,value)=>{
        
   if (value.toString() ==='false')
     {try{
-          const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/activatezone/${name}`)
+          const response = await axios.put(`https://arcane-peak-98567.herokuapp.com/activatezone/${name}`)
         console.log('data',response?.data);
         // console.log(JSON.stringify(response))
        alert(`Zone ${name} was enabled with success !`)
@@ -36,7 +36,7 @@ const callBlock =async (name ,value)=>{
       }
   else 
   {try{
-          const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/blockzone/${name}`)
+          const response = await axios.put(`https://arcane-peak-98567.herokuapp.com/blockzone/${name}`)
         console.log('data',response?.data);
         // console.log(JSON.stringify(response))
        alert(`Zone ${name} was blocked with success !`)
@@ -86,7 +86,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/zones');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/zones');
         setData(response);
       } catch (error) {
         console.error(error.message);
@@ -131,9 +131,9 @@ const Main = () => {
       {!loading && (
       <div className="rainbow-m-bottom_xx-large" >
         <TableWithBrowserPagination  pageSize={5} data={options} keyField="id"  >
-            <Column header="ID" field="zoneId" style={{fontSize:'20px'}} />  
-            <Column header="Creator" field="zoneCreator" />
+            <Column header="ID" field="zoneId" style={{ fontSize: '20px' }} /> 
             <Column header="Designation" field="zoneDesignation" style={{fontSize:'20px'}} />
+            <Column header="Creator" field="zoneCreator" />
             <Column header="Description" field="zoneDescription" />
             <Column header="Creation Date" field="zoneDateCreation" component={Dated} />
             <Column header="Status" field="zoneActive"  component={StatusBadge} />

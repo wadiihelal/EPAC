@@ -12,8 +12,8 @@
 //     const fetchData = async () =>{
 //       setLoading(true);
 //       try {
-//         const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/nbPallet');
-//         const {dataPallet: res} = await axios.get('https://murmuring-reef-55468.herokuapp.com/nbState');
+//         const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/nbPallet');
+//         const {dataPallet: res} = await axios.get('https://arcane-peak-98567.herokuapp.com/nbState');
 //         setData(response);
 //         setDataPallet(res)
 //         console.log(data,'data')
@@ -97,7 +97,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/nbPallet');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/nbPallet');
         setData(response);
         console.log(res)
       } catch (error) {

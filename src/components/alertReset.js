@@ -23,7 +23,7 @@ const [isVisible,setIsVisible] = useState(false)
     }
  const submit = async( ) =>{
           try{
-                const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/resetpallet/${id}`)
+                const response = await axios.put(`https://arcane-peak-98567.herokuapp.com/resetpallet/${id}`)
                 console.log('data',response?.data);
                 // console.log(JSON.stringify(response))
                 message.success(`Pallet ${id} is resetted`)

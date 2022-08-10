@@ -12,7 +12,7 @@ export default function BusyPallet () {
     useEffect(() => {
     const fetchData = async () =>{
         try {
-          const { data: response } = await axios.get( 'https://murmuring-reef-55468.herokuapp.com/maxDaysActive' );
+          const { data: response } = await axios.get( 'https://arcane-peak-98567.herokuapp.com/maxDaysActive' );
           console.log("🚀 ~ file: busyPallet.js ~ line 16 ~ fetchData ~ response", response)
           
             setData( response );

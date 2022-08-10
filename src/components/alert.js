@@ -29,7 +29,7 @@ function Alerts ()
       const fetchData = async () =>{
         try {
           setIsLoading(true);
-          const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/activezone');
+          const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/activezone');
           setZones(response); 
           setIsLoading(false);
   
@@ -51,7 +51,7 @@ function Alerts ()
       // value.preventDefault ()
         setIsLoading(true) //gbal el exios
           try{
-            const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/createPallet/${value.creator}/${value.zone}`)
+            const response = await axios.post(`https://arcane-peak-98567.herokuapp.com/createPallet/${value.creator}/${value.zone}`)
           
           console.log('data',response?.data);
             // console.log( JSON.stringify( response ) )

@@ -33,7 +33,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/pallets');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/pallets');
         setData(response);
         console.log(response)
       } catch (error) {

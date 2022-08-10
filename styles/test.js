@@ -15,7 +15,7 @@ import axios from 'axios';
   const fetchData = async () =>{
     try {
       setIsLoading(true);
-      const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/PalletsByZone');
+      const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/PalletsByZone');
       setData( response ); 
       console.log("🚀 ~ file: test.js ~ line 18 ~ fetchData ~ response", response)
       setIsLoading(false);

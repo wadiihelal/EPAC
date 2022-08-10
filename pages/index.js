@@ -54,7 +54,7 @@ function Home ()
     };
     const fetchData = async () =>{
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/maxNbPalletActive');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/maxNbPalletActive');
         setData( response );
         setLoading(true);
         openNotification( response.number, response.zone)

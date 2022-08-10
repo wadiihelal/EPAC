@@ -12,7 +12,7 @@ import {  message  } from 'antd';
 import "antd/dist/antd.css"
 const Test = () => {
   const { data, loading, error } = useFetchData(
-    "https://murmuring-reef-55468.herokuapp.com/PalletsByZone"
+    "https://arcane-peak-98567.herokuapp.com/PalletsByZone"
   );
   const { palletsAdapter, zonesAdapter } = useAdapter();
 
@@ -41,7 +41,7 @@ const Test = () => {
   const onSubmit = async( value) =>{
   try
   {
-     const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/affectLoadTag/${value.loadTag}/${value.pallet}/${value.zone}`)      
+     const response = await axios.post(`https://arcane-peak-98567.herokuapp.com/affectLoadTag/${value.loadTag}/${value.pallet}/${value.zone}`)      
       console.log('data',response?.data);
       // console.log(JSON.stringify(response))
       message.success(`LoadTag ${value.loadTag} was added with success !`)

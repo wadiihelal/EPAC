@@ -26,7 +26,7 @@ const Dated = ({ value }) =>{
 const Main = () => {
           const callBlock =async (name )=>{
           try{
-                const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/blockpallet/${name}`)
+                const response = await axios.put(`https://arcane-peak-98567.herokuapp.com/blockpallet/${name}`)
                 console.log('data',response?.data);
                 console.log(JSON.stringify(response))
                 message.success(`Pallet ${name} was blocked with success !`)
@@ -38,7 +38,7 @@ const Main = () => {
             }
           // else 
           // {try{
-          //         const response = await axios.put(`https://murmuring-reef-55468.herokuapp.com/blockzone/${name}`)
+          //         const response = await axios.put(`https://arcane-peak-98567.herokuapp.com/blockzone/${name}`)
           //       console.log('data',response?.data);
           //       console.log(JSON.stringify(response))
           //     alert(`Zone ${name} was blocked with success !`)
@@ -81,7 +81,7 @@ const Main = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/pallets');
+        const {data: response} = await axios.get('https://arcane-peak-98567.herokuapp.com/pallets');
         setData(response);
         console.log(response)
       } catch (error) {
