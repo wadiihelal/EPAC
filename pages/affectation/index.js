@@ -39,19 +39,19 @@ const Test = () => {
   };
 
   const onSubmit = async( value) =>{
-  // try
-  // {
-  //    const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/affectLoadTag/${value.loadTag}/${value.pallet}/${value.zone}`)      
-  //     console.log('data',response?.data);
-  //     console.log(JSON.stringify(response))
-  //     message.success(`LoadTag ${value.loadTag} was added with success !`)
-  //    }
-  //   catch (err) {
-  //   console.log("🚀 ~ file: index.js ~ line 47 ~ onSubmit ~ err", err)
-  //   message.error( 'Invalid Pallet LoadTag , please retry' )
+  try
+  {
+     const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/affectLoadTag/${value.loadTag}/${value.pallet}/${value.zone}`)      
+      console.log('data',response?.data);
+      console.log(JSON.stringify(response))
+      message.success(`LoadTag ${value.loadTag} was added with success !`)
+     }
+    catch (err) {
+    console.log("🚀 ~ file: index.js ~ line 47 ~ onSubmit ~ err", err)
+    message.error( 'Invalid Pallet LoadTag , please retry' )
     
-  // }
-  // router.push('/')
+  }
+  router.push('/')
     }
 
   const onZonesValueChange = (e) => {
