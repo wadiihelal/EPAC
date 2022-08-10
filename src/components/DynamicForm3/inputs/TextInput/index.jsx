@@ -8,8 +8,9 @@ import {
   LabelWrapper,
 } from "./styles";
 import { Input } from "react-rainbow-components";
-const Index = ({ input }) => {
-  const { name, label, placeHolder, hidden, readOnly } = input;
+// const Index = ({ input }) => {
+//   const { name, label, placeHolder, hidden, readOnly } = input;
+  const Index = ({ name, label, options, readOnly, hidden ,placeHolder,defaultValue}) => {
 
   return (
     <Field name={name}>

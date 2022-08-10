@@ -9,16 +9,18 @@ export const Container = styled.div`
 `;
 export const LabelWrapper = styled.div`
 
-  display: flex;
+text-align:center;
+margin-left:25%
+display: flex;
 `;
 export const StyledLabel = styled.label`
-  font-weight: 700;
-  font-size: 16px;
-  color: black;
-  text-align:center;
-  margin:3%;
-  margin-left:45%;
-  margin-right:45%;
+font-weight: 700;
+font-size: 16px;
+color: black;
+margin-top: 3%;
+margin-bottom:3%;
+margin-left:3%;
+text-align: center;
 `;
 
 // export const Msg = styled.span`

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Field, ErrorMessage, useFormikContext } from "formik";
 import { Container, StyledLabel, Msg, StyledSelect } from "./styles";
 import { Select } from "react-rainbow-components";
-const Index = ({ input }) => {
-  const { name, label, options, readOnly, hidden } = input;
+const Index = ({ name, label, options, readOnly, hidden }) => {
+
   const { setFieldValue } = useFormikContext();
   const [val, setVal] = useState(options[0].value);
 

@@ -3,16 +3,17 @@ import { Button } from 'react-rainbow-components';
 import Modal from 'react-awesome-modal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faCheck, faArrowRight, faPlug ,faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Select ,Input } from 'react-rainbow-components';
 import axios from 'axios';
 import { useRouter }  from "next/router";
-import DynamicForm from './DynamicForm3'
 import { Spinner } from 'react-rainbow-components';
 import {  message  } from 'antd';
 import { StyledButtonAddLoad } from './DynamicForm3/SubmitButton/styles'
 import "antd/dist/antd.css"
+import { Formik, Form } from "formik";
+import SubmitButton from './DynamicForm3/SubmitButton'
 import styled from "styled-components"
-
+import Select from './DynamicForm3/inputs/Select'
+import TextInput from './DynamicForm3/inputs/TextInput'
 function Alerts ()
 
 {
@@ -28,7 +29,7 @@ function Alerts ()
       const fetchData = async () =>{
         try {
           setIsLoading(true);
-          const {data: response} = await axios.get('http://localhost:9090/activezone');
+          const {data: response} = await axios.get('https://murmuring-reef-55468.herokuapp.com/activezone');
           setZones(response); 
           setIsLoading(false);
   
@@ -46,15 +47,16 @@ function Alerts ()
 
   
     const onSubmit = async( value) =>{
+    console.log("🚀 ~ file: alert.js ~ line 50 ~ onSubmit ~ value", value.creator)
       // value.preventDefault ()
         setIsLoading(true) //gbal el exios
           try{
-            const response = await axios.post(`http://localhost:9090/createPallet/${value.Name}/${value.Zone}`)
+            const response = await axios.post(`https://murmuring-reef-55468.herokuapp.com/createPallet/${value.creator}/${value.zone}`)
           
           console.log('data',response?.data);
             console.log( JSON.stringify( response ) )
             changeModal(true)
-          message.success(`Pallet ${value.Name} was added with success in Zone ${value.Zone} !`)
+          message.success(`Pallet ${value.creator} was added with success in Zone ${value.zone} !`)
           setIsLoading(false) 
          }
         catch (err) {
@@ -67,27 +69,14 @@ function Alerts ()
   
        
     }
+    const initialValues = {
+      creator: "",
+       zone: '',
+     }
     
-  
-    const inputs = [
-       {
-        type: "cinNumber",
-        name: "Name",
-        label: "Owner",
-        placeHolder: "Please Tap your Name",
-        required: true,
-        defaultValue: "",
-        readOnly: false,
-        hidden: false,
-      },
-      {
-        type: "select",
-        name: "Zone",
-        label: "Zone",
-        required: true,
-        options: option,
-      }
-    ];
+    const textProp={ name:'creator', label:"Creator Name", placeHolder:"Please Tap your Name", hidden:false, readOnly:false,required:true  }
+    const selectProp = {name :"zone", label :'Zone', options:option, readOnly:false, hidden:false }
+
     
       const ButtonCancel= styled(StyledButtonAddLoad)  `
       background: red;
@@ -106,8 +95,20 @@ function Alerts ()
         height="400"
         onClickAway={() =>changeModal()}
       >
-        <div style={{marginTop:'5%',maxWidth:'450px',fontFamily:'initial',margin:'5%'}}>
-          <DynamicForm inputs={inputs} onSubmit={onSubmit} />
+        <div style={{ marginTop: '5%', maxWidth: '450px', fontFamily: 'initial', margin: '5%' }}>
+        <Formik
+          onSubmit={onSubmit}
+          initialValues={initialValues}
+          >
+          {formik => (
+          <Form>
+            <TextInput {...textProp} />
+            <Select {...selectProp} />
+            <SubmitButton >Submit</SubmitButton>
+          </Form>
+
+          )}
+          </Formik>
           <ButtonCancel onClick={() => changeModal()} >Close</ButtonCancel>
         </div>
         

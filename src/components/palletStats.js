@@ -55,7 +55,7 @@ function renderDataset() {
 
     <div > 
     <br></br>
-    <h1>Pallets stats</h1>
+    <h1 >Pallet by state </h1>
     <br></br>
       <Chart labels={labels} type="pie" legendPosition="right" >
                 {renderDataset()}

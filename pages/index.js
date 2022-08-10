@@ -6,7 +6,9 @@ import { useState , useEffect } from "react";
 import axios from "axios";
 import {  notification, Space } from 'antd';
 import BusyPallet from "../src/components/busyPallet";
-
+import {
+  RadiusBottomrightOutlined
+} from '@ant-design/icons';
 
 function Home ()
 {   
@@ -39,10 +41,14 @@ function Home ()
           message: 'Zone Notification',
           description:
            ` ${zone} has ${nb} pallets , go check it now !`,
-          className: 'custom-class',
+        className: 'custom-class',
+        duration: 0,
           btn,
           btnclose,
-          key,
+        key,
+        placement: RadiusBottomrightOutlined,
+        
+
         });
       
     };

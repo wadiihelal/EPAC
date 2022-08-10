@@ -16,14 +16,14 @@ export const defaultProps = {
       name: "phoneNumber",
       label: "Phone Number",
       required: true,
-      defaultValue: "26675997",
+      defaultValue: "00000000",
     },
     {
       type: "cinNumber",
       name: "cinNumber",
       label: "CIN Number",
       required: true,
-      defaultValue: "61876257",
+      defaultValue: "00000000",
     },
     {
       type: "address",

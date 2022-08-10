@@ -15,7 +15,6 @@ const Index = ({ name, label, options, readOnly, hidden ,onValueChange,defaultVa
     setFieldValue( name, val );
     onValueChange( val )
     
-    console.log("🚀 ~ file: index.jsx ~ line 20 ~ Index ~ val", val)
 
   }, [ val ]
     
@@ -28,7 +27,6 @@ const Index = ({ name, label, options, readOnly, hidden ,onValueChange,defaultVa
     
   }
     // setVal(options[0].value)
-    console.log("🚀 ~ file: index.jsx ~ line 24 ~ Index ~ options", options)
    }, [
     options
   ])

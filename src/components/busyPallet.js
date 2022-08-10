@@ -3,6 +3,9 @@ import axios from 'axios';
 import Back from './back'
 import { notification } from 'antd';
 import { Chart, Dataset } from 'react-rainbow-components';
+import {
+  RadiusBottomrightOutlined
+} from '@ant-design/icons';
 export default function BusyPallet () {
   
     const [data, setData] = useState([])
@@ -18,7 +21,9 @@ export default function BusyPallet () {
             message: 'Pallet Notification',
             description:
              `${palletId} has ${response[palletId]} days active ⚠️!`,
-            className: 'custom-class',
+        className: 'custom-class',
+        duration: 0,
+            placement: RadiusBottomrightOutlined,
             
           });
         

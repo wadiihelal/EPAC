@@ -45,7 +45,7 @@ function addPallet() {
   pallets.map((e) => {
     options.push({ value: e, label: e });
   })
-    option.shift() 
+  option.shift() 
   options.shift() 
 
   const onSubmit = async( value) =>{

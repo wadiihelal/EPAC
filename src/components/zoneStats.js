@@ -161,7 +161,7 @@ function renderDataset() {
 
     <div > 
     <br></br>
-    <h1>Zone stats</h1>
+    <h1>Active pallet by zone </h1>
     <br></br>
       <Chart labels={labels} type="pie" legendPosition="right" >
                 {renderDataset()}

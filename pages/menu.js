@@ -28,7 +28,7 @@ function Menu ()
     </Button>
     <div style={{textAlign:'center',marginLeft:'2%',marginTop:'5%'}}>
     
-                        <Alerts id={5 } />
+     <Alerts />
     </div>
     </div>
         </div>

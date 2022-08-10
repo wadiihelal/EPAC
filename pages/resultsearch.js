@@ -5,15 +5,20 @@ import { TableWithBrowserPagination, Column, Badge ,Spinner } from 'react-rainbo
 import Back from '../src/components/back'
 import AlertReset from "../src/components/alertReset";
 import { Button, Result } from 'antd';
+import dayjs from 'dayjs'
 
-
+// const Dated = ({ value }) =>{
+//   const x = new Date(value);
+//   const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
+//   return (
+//   <div>
+//     {y}
+//   </div>)}
 const Dated = ({ value }) =>{
-  const x = new Date(value);
-  const y = " " + x.getHours().toString() + " : " +x.getMinutes().toString() +" - " + x.getDate().toString() + "/"+ (x.getMonth()+1).toString()+ "/"+ x.getFullYear().toString()
-  return (
-  <div>
-    {y}
-  </div>)}
+  // const x = new Date(value);
+   const tidyDate = dayjs(value).format("MMM D, YY h:mm A");
+   return <span>{tidyDate}</span>;      
+}
    const resultSearch = (props) => {
     const [loading, setLoading] = useState(true);
 
