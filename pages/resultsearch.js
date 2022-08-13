@@ -45,6 +45,7 @@ const Dated = ({ value }) =>{
 
          const options= [];
          options.push(data)       
+         console.log("🚀 ~ file: resultsearch.js ~ line 48 ~ resultSearch ~ options", options)
 
         if (data==[] || data==null){
           return(
@@ -76,7 +77,7 @@ const Dated = ({ value }) =>{
           <Column header="ID" field="palletID" style={{fontSize:'20px'}} />
           <Column header="Creation Date" field="palletDateCreation" component={Dated} />
           <Column header="Creator" field="palletCreator" />
-          <Column header="zoneID" field="zoneId" />
+          <Column header="zone" field="zoneDesignation" />
 
       </TableWithBrowserPagination>
       <div style={{marginLeft:'49%',marginTop:'4%',fontSize:'20px'}}  >
